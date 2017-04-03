@@ -1,0 +1,8 @@
+package commons.packet;
+
+//클라이언트가 서버에게 전달할 요청 팻킷 모음
+public class RequestPacket {
+	public static final int REQ_LOGIN = 100;
+	public static final int REQ_JOIN = 100;
+	public static final int REQ_LOGIN = 100;
+}

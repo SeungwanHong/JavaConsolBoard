@@ -1,0 +1,23 @@
+package server;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class severMain {
+	public static void main(String[] args) {
+
+		final String DB_url = "jdbc:oracle:thin:@localhost:1521:orcl";
+		final String DB_user = "hsw";
+		final String DB_password = "hsw";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try{
+			Class.forName("oracle.jdbc.driver.OracleDriver")
+		}catch()
+	}
+}

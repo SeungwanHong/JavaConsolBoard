@@ -1,0 +1,39 @@
+package server;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class severMain {
+	
+	public static void main(String[] args) {
+		
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		//라이브러리 로드는 전역적으로 해야하는 부분이기 때문에
+		//DAO에 따로 배치하지 않는다.
+		try{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("라이브러리 로드 완료");
+			
+			conn = DriverManager.getConnection(DB_url, DB_user, DB_password);
+			System.out.println("접속완료");
+		}catch(ClassNotFoundException e){
+			e.printStackTrace();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}

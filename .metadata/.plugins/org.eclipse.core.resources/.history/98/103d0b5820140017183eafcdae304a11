@@ -1,0 +1,10 @@
+package commons.packet;
+
+//클라이언트가 서버에게 전달할 요청 팻킷 모음
+public class RequestPacket {
+	//회원 관련 1--
+	//회원관련내의 다음 구분 10-, 11-
+	public static final int REQ_LOGIN = 100;
+	public static final int REQ_JOIN = 110;
+
+}

@@ -1,0 +1,14 @@
+package commons.menu;
+
+public class Menu {
+	public static final int MENU_LOGIN = 1;
+	public static final int MENU_JOIN = 2;
+	public static final int MENU_EXIT = 0;
+	public static final int MENU_BOARD_LIST = 1;
+	public static final int MENU_BOARD_WRITE = 2;
+	public static final int MENU_BOARD_LOGOUT = 3;
+	public static final int MENU_BOARD_VIEW = 1;
+	public static final int MENU_BOARD_DELET = 2;
+	public static final int MENU_BOARD_MODIFY = 3;
+	public static final int MENU_BOARD_BACK = 4;
+}

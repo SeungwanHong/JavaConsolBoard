@@ -1,0 +1,6 @@
+package commons.packet;
+
+//서버가 클라이언트의
+public class ResponsePacket {
+
+}

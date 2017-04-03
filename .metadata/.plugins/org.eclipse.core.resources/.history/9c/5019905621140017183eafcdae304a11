@@ -1,0 +1,49 @@
+package server.thread;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+
+import server.doa.UserDao;
+
+public class ServerThread extends Thread{
+	private Socket clientSocket;
+	private UserDao dao;
+	
+	private DataInputStream dis;
+	private DataOutputStream dos;
+	
+	
+	//쓰래드 생성시 접속한 클라이언트로부터 데이터를 받거나 접속한 클라이언트에게 데이터를 전송하기
+	//위해 클라이언트 소켓을 생성자의 매게변수로 받는다.
+	public ServerThread(Socket clientSocket){
+		this.clientSocket = clientSocket;
+		//Thread 마다 dao를 이용해서 쿼리 처리해준다.
+		dao = new UserDao();
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try {
+			dis = new DataInputStream(clientSocket.getInputStream());
+			dos = new DataOutputStream(clientSocket.getOutputStream());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try{
+				dis.close();
+				dos.close();
+				clientSocket.close();
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+package commons.packet;
+
+//
+public class RequestPacket {
+
+}

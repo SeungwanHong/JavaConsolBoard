@@ -1,0 +1,21 @@
+package commons.packet;
+
+//클라이언트가 서버에게 전달할 요청 팻킷 모음
+public class RequestPacket {
+	
+	public static final int REQ_EIXT = -1;
+	//회원 관련 1--
+	//회원관련내의 다음 구분 10-, 11-
+	//세번째 : 다음 구분에서 분리될 내용이 있는가?(임시 자리숫)
+	
+	//단 패킷의 값은 겹치면 안된다.
+	//각각의 패킷들은 고유한 값을 가져야한다.
+	
+	public static final int REQ_LOGIN = 100;
+	public static final int REQ_JOIN = 110;
+
+	//게시판 관련 2--
+	public static final int REQ_BOARD_LIST = 200;
+	public static final int REQ_BOARD_MOD = 210;
+	
+}
